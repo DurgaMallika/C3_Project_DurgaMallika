@@ -60,8 +60,13 @@ public class Restaurant {
                 +"Menu:"+"\n"+getMenu());
     }
 
-    public int calculateOrderValue(List<String> selectedItems){
-        return 0;
+    public int calculateOrderValue(List<String> selectedItems) throws itemNotFoundException {
+        int orderValue=0;
+        for(String selectedItem : selectedItems){
+            Item item = findItemByName(selectedItem);
+            orderValue+=item.getPrice();
+        }
+        return orderValue;
     }
 
     public String getName() {

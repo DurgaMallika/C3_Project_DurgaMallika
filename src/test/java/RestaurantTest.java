@@ -63,7 +63,7 @@ class RestaurantTest {
     //<<<<<<<<<<<<<<<<<<<<<<<Price Calculation>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
     @Test
-    public void price_calculation_should_return_the_correct_order_value_of_selected_items(){
+    public void price_calculation_should_return_the_correct_order_value_of_selected_items() throws itemNotFoundException {
         ArrayList selectedItems = new ArrayList<String>();
         selectedItems.add("Sweet corn soup");
         selectedItems.add("Vegetable lasagne");
