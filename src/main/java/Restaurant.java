@@ -60,6 +60,10 @@ public class Restaurant {
                 +"Menu:"+"\n"+getMenu());
     }
 
+    public int calculateOrderValue(List<String> selectedItems){
+        return 0;
+    }
+
     public String getName() {
         return name;
     }

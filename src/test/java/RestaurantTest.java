@@ -6,6 +6,7 @@ import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.time.LocalTime;
+import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -59,5 +60,14 @@ class RestaurantTest {
         assertThrows(itemNotFoundException.class, ()->restaurant.removeFromMenu("French fries"));
     }
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+    //<<<<<<<<<<<<<<<<<<<<<<<Price Calculation>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
+    @Test
+    public void price_calculation_should_return_the_correct_order_value_of_selected_items(){
+        ArrayList selectedItems = new ArrayList<String>();
+        selectedItems.add("Sweet corn soup");
+        selectedItems.add("Vegetable lasagne");
+        assertEquals(388,restaurant.calculateOrderValue(selectedItems));
+    }
+    //<<<<<<<<<<<<<<<<<<<<<<<Price Calculation>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 }
